@@ -31,13 +31,16 @@ SADFiles relies on a lightweight portable version of 7Zip, which you can - and s
 ## All Parameters
 
 Current:
+
 | Parameter | Mandatory/Optional | Description |
 | --- | --- | --- |
 | `-f` | Mandatory | Full path for target file/folder. |
 | `-nocleanup` | Optional | Do not delete 7Z execution files from staging directory |
 
 Planned:
+
 | Parameter | Mandatory/Optional | Description |
+| --- | --- | --- |
 | `-o` | Optional | Path for staging and output. |
 | `-p` | Optional | Declare a custom password for the archive file |
 | `-hint` | Optional | Write a password hint to the log file |
