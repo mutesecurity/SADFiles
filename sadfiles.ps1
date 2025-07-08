@@ -27,10 +27,10 @@
     ALIAS: password
 
 .PARAMETER hint
-    Optional custom hint line written to the job log, prepended by "HINT:". Intended to help you remember a custom password.
+    Optional hint line written to the job log, prepended by "Password Hint:". Intended to help you remember a custom password.
 
 .PARAMETER case
-    Optional custom string written to the job log, prepended by "CASE NUMBER:". Intended for case numbers, ticket numbers, unique reference numbers, etc.
+    Optional string written to the job log, prepended by "CASE NUMBER:". Intended for case numbers, ticket numbers, unique reference numbers, etc.
     ALIAS: ticket
 
 .SWITCH nohash
@@ -158,16 +158,16 @@ try {
     Write-JobLog ""
     Write-JobLog "Script version: $scriptVersion"
     Write-JobLog "Host: $computerName"
-    Write-JobLog "Target specified: $f"
-        if ($case) {
-        Write-JobLog "CASE NUMBER: $case"
-    }
     Write-JobLog "System Time (Local): $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
     Write-JobLog "System Time (UTC): $(Get-Date -Date ([DateTime]::UtcNow) -Format 'yyyy-MM-dd HH:mm:ss')"
     Write-JobLog "System Timezone: $((Get-TimeZone).Id)"
-    if ($hint) {
-        Write-JobLog "HINT: $hint"
+    if ($case) {
+        Write-JobLog "CASE NUMBER: $case"
     }
+    if ($hint) {
+        Write-JobLog "Password Hint: $hint"
+    }
+    Write-JobLog "Target specified: $f"
     Write-JobLog "Starting the job..."
     Write-JobLog ""
 
