@@ -1,5 +1,5 @@
 # SADFiles
-Safe Acquisition of Dangerous Files - Extract malicious files from endpoints without comprimising the analyst system using Microsoft Defender for Endpoint.
+**S**afe **A**cquisition of **D**angerous **Files** - Extract malicious files from endpoints without comprimising the analyst system using Microsoft Defender for Endpoint.
 
 ## About
 SADFiles is a Powershell script designed for Microsoft Defender for Endpoint. It's primary purpose is to package malicious files on an endpoint into a password protected container so that they can be safely pulled over using getfile. This eliminates the risk of generating further alerts (or frustrating quarantine actions), or, worse still, accidental execution and subsequent infection, on the analyst's own endpoint.
@@ -11,7 +11,7 @@ SADFiles relies on a lightweight portable version of 7Zip, which you can - and s
 * Open the Program Files (default: C:\Program Files\7-Zip) and locate 7z.exe and 7z.dll.
 * Copy both of those files to a simple archive named 7Z.zip.
 * Upload 7Z.zip to the Microsoft Defender for Endpoint Live Response Library.
-* Donload sadfiles.ps1 from this repo and upload it to the Microsoft Defender for Endpoint Live Response Library.
+* Download sadfiles.ps1 from this repo and upload it to the Microsoft Defender for Endpoint Live Response Library.
 * That's it. You're ready to go.
 
 ## Execution
