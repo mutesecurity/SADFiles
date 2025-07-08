@@ -37,7 +37,7 @@ Current:
 | `-f` | Mandatory | Full path for target file/folder, including file extension (if applicable). |
 | `-o` | Optional | Path for staging and output. Defaults to C:\Temp\ |
 | `-p` | Optional | Declare a custom password for the archive file. Defaults to "infected". |
-| `-hint` | Optional | Write a password hint to the log file. Use '' if this contains spaces|
+| `-hint` | Optional | Write a password hint to the log file. Use ' ' if this contains spaces|
 
 | Switch | Mandatory/Optional | Description |
 | --- | --- | --- |
