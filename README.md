@@ -30,7 +30,7 @@ SADFiles relies on a lightweight portable version of 7Zip, which you can - and s
 * You can add a case or ticket number to the job log with `-case` or `-ticket`.
 * Hashing large files got you down? Save that pain for Future You with `-nohash`.
 * Adding `-nocleanup` to your `run sadfiles.ps1` parameters will skip cleaning up the 7Zip files on the endpoint.
-* You can include a text file named "ReadMe.txt" to your 7Z.zip. This will be copied to the sadfiles folder on execution of sadfiles.ps1.
+* You can include a text file named "ReadMe.txt" in your 7Z.zip. This will be copied to the root of the sadfiles folder on execution.
 
 ## All Parameters
 
