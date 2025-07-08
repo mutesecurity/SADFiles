@@ -34,7 +34,10 @@ Current:
 
 | Parameter | Mandatory/Optional | Description |
 | --- | --- | --- |
-| `-f` | Mandatory | Full path for target file/folder. |
+| `-f` | Mandatory | Full path for target file/folder, including file extension (if applicable). |
+
+| Switch | Mandatory/Optional | Description |
+| --- | --- | --- |
 | `-nocleanup` | Optional | Do not delete 7Z execution files from staging directory |
 
 Planned:
@@ -44,5 +47,8 @@ Planned:
 | `-o` | Optional | Path for staging and output. |
 | `-p` | Optional | Declare a custom password for the archive file |
 | `-hint` | Optional | Write a password hint to the log file |
-| `-nohash` | Optional | Skip hashing of the target |
 
+
+| Switch | Mandatory/Optional | Description |
+| --- | --- | --- |
+| `-nohash` | Optional | Skip hashing of the target |
