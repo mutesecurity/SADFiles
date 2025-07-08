@@ -25,6 +25,10 @@ SADFiles relies on a lightweight portable version of 7Zip, which you can - and s
 * NOTE: The script will remove the 7Zip files automatically on success by default.
 
 ## Advanced/Optional Features
+* A custom path for staging and output can be defined with `-o`.
+* A custom password and password hint can be defined with `-p` and `-hint` respectively.
+* You can add a case or ticket number to the job log with `-case` or `-ticket`.
+* Hashing large files got you down? Save that pain for Future You with `-nohash`.
 * Adding `-nocleanup` to your `run sadfiles.ps1` parameters will skip cleaning up the 7Zip files on the endpoint.
 * You can include a text file named "ReadMe.txt" to your 7Z.zip. This will be copied to the sadfiles folder on execution of sadfiles.ps1.
 
