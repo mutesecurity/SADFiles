@@ -1,7 +1,8 @@
 ﻿<#
 .SYNOPSIS
     SADFiles - Safe Acquisition of Dangerous Files
-    Collects single files or entire folders into passworded archive containers for safe handling.
+    Collects single files or entire folders into passworded archive containers for safe handling. 
+    Designed for Microsoft Defender for Endpoint.
     Learn more at https://github.com/mutesecurity/SADFiles/
 
 .DESCRIPTION
