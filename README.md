@@ -20,5 +20,26 @@ SADFiles relies on a lightweight portable version of 7Zip, which you can - and s
 * To grab a single file, use `run sadfiles.ps1 -parameters "-f C:\Path\To\File.ext"`. Make sure you include the extension at the end.
 * To grab an entire directory, use `run sadfiles.ps1 -parameters "-f C:\Path\To\Folder"`.
 * In your Live Response session, use `cd C:\Temp\sadfiles` to navigate to the sadfiles folder.
-* The timestamped job log will be present here. Any errors that occured during runtime are detailed inside, as well as some limited metadata on the file(s) collected (including hashes).
+* The timestamped job log will be present here. Any errors that occured during runtime are detailed inside, as well as some limited metadata on the file(s) collected (including MD5, SHA1 and SHA256 hashes).
 * To recover your output, use the `getfile` command in Live Response to retrieve the archive file within C:\Temp\sadfiles\Output.
+* NOTE: The script will remove the 7Zip files automatically on success by default.
+
+## Advanced/Optional Features
+* Adding `-nocleanup` to your `run sadfiles.ps1` parameters will skip cleaning up the 7Zip files on the endpoint.
+* You can include a text file named "ReadMe.txt" to your 7Z.zip. This will be copied to the sadfiles folder on execution of sadfiles.ps1.
+
+## All Parameters
+
+Current:
+| Parameter | Mandatory/Optional | Description |
+| --- | --- | --- |
+| `-f` | Mandatory | Full path for target file/folder. |
+| `-nocleanup` | Optional | Do not delete 7Z execution files from staging directory |
+
+Planned:
+| Parameter | Mandatory/Optional | Description |
+| `-o` | Optional | Path for staging and output. |
+| `-p` | Optional | Declare a custom password for the archive file |
+| `-hint` | Optional | Write a password hint to the log file |
+| `-nohash` | Optional | Skip hashing of the target |
+
