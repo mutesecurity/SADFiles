@@ -1,5 +1,5 @@
 # SADFiles
-**S**afe **A**cquisition of **D**angerous **Files** - Extract malicious files from endpoints without comprimising the analyst system using Microsoft Defender for Endpoint.
+**S**afe **A**cquisition of **D**angerous **Files** - Extract malicious files from endpoints without compromising the analyst system using Microsoft Defender for Endpoint.
 
 ## About
 SADFiles is a Powershell script designed for Microsoft Defender for Endpoint. It's primary purpose is to package malicious files on an endpoint into a password protected container so that they can be safely pulled over using getfile. This eliminates the risk of generating further alerts (or frustrating quarantine actions), or, worse still, accidental execution and subsequent infection, on the analyst's own endpoint.
