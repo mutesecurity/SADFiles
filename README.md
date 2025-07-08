@@ -45,7 +45,7 @@ Current:
 
 | Switch | Mandatory/Optional | Description |
 | --- | --- | --- |
-| `-nocleanup` | Optional | Do not delete 7Z execution files from staging directory |
+| `-nocleanup` | Optional | Do not delete 7Z execution files from staging directory. Not recommended. |
 | `-nohash` | Optional | Skip hashing of the target |
 
 Planned:
