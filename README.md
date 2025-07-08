@@ -48,4 +48,4 @@ Planned:
 
 | Parameter | Mandatory/Optional | Description |
 | --- | --- | --- |
-| `-list` | Optional | Replaces -f. Provide a text file of file paths (seperated by line breaks) as targets. |
+| `-list` | Optional | Used instead of -f. Provide a text file of file paths (seperated by line breaks) as targets. |
