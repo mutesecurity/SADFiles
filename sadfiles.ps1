@@ -162,7 +162,7 @@ try {
     Write-JobLog "System Time (UTC): $(Get-Date -Date ([DateTime]::UtcNow) -Format 'yyyy-MM-dd HH:mm:ss')"
     Write-JobLog "System Timezone: $((Get-TimeZone).Id)"
     if ($case) {
-        Write-JobLog "CASE NUMBER: $case"
+        Write-JobLog "Case Number: $case"
     }
     if ($hint) {
         Write-JobLog "Password Hint: $hint"
