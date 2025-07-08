@@ -32,6 +32,9 @@
     Optional custom string written to the job log, prepended by "CASE NUMBER:". Intended for case numbers, ticket numbers, unique reference numbers, etc.
     ALIAS: ticket
 
+.SWITCH nohash
+    Optional switch to skip metadata logging and hashing of target file(s). The jog log will still list all filenames being collected.
+
 .SWITCH nocleanup
     Optional switch to skip removal of 7Z files after success. Not recommended.
 
