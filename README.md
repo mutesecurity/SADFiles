@@ -20,8 +20,9 @@ SADFiles relies on a lightweight portable version of 7Zip, which you can - and s
 * To grab a single file, use `run sadfiles.ps1 -parameters "-f C:\Path\To\File.ext"`. Make sure you include the extension at the end.
 * To grab an entire directory, use `run sadfiles.ps1 -parameters "-f C:\Path\To\Folder"`.
 * In your Live Response session, use `cd C:\Temp\sadfiles` to navigate to the sadfiles folder.
-* The timestamped job log will be present here. Any errors that occured during runtime are detailed inside, as well as some limited metadata on the file(s) collected (including MD5, SHA1 and SHA256 hashes).
-* To recover your output, use the `getfile` command in Live Response to retrieve the archive file within C:\Temp\sadfiles\Output.
+* If any critical errors were encountered, the timestamped job log will be present here for inspection.
+* If no critical errors were encountered, the job log and the passworded archive will be bundled together at C:\Temp\sadfiles\Output within an archive file named after the System Name of the target.
+* To recover your output, use the `getfile` command in Live Response to retrieve this archive file from C:\Temp\sadfiles\Output.
 * NOTE: The script will remove the 7Zip files automatically on success by default.
 
 ## Advanced/Optional Features
