@@ -92,16 +92,16 @@ param(
 )
 
 ## VARIABLES
-# Execution timestamp for logging, file naming
+# Values for job log.
 $timestamp = Get-Date -Format "yyyyMMddHHmmss"
-
-# Constants
 $scriptVersion = "1.0.5"
 $computerName = $env:COMPUTERNAME
+
+# Debugging switch to write seperate error log.
 $debugging = 0
 
 ## PATHS
-# Determine base path for staging, output
+# Determine base path for staging, output.
 if ($o) {
     $basePath = Join-Path $o "sadfiles"
 } else {
