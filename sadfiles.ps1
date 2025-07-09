@@ -91,7 +91,6 @@ param(
     [switch]$nohash # Optional switch to skip hashing and metadata logging
 )
 
-
 ## VARIABLES
 # Execution timestamp for logging, file naming
 $timestamp = Get-Date -Format "yyyyMMddHHmmss"
@@ -148,12 +147,10 @@ function Log-FileDetails {
     Write-JobLog ""
 }
 
-# Here we go!
-
 try {
     New-Item -Path $outputPath -ItemType Directory -Force | Out-Null
 
-    # Job header
+    # Write the job log header
     Write-JobLog "### Safe Acquisition of Dangerous Files ###"
     Write-JobLog ""
     Write-JobLog "Script version: $scriptVersion"
@@ -171,7 +168,7 @@ try {
     Write-JobLog "Starting the job..."
     Write-JobLog ""
 
-    # Validate that 7Z.zip is where we expect it to be.
+    # Validate that 7Z.zip is in the MDE Downloads folder.
     $sourceZip = "C:\ProgramData\Microsoft\Windows Defender Advanced Threat Protection\Downloads\7Z.zip"
     if (-not (Test-Path -Path $sourceZip)) {
         Write-ErrorLog "7Z.zip not found in $sourceZip. Please check it has been pushed."
@@ -180,6 +177,7 @@ try {
         exit 1
     }
 
+    # Validate that the target file/folder exists on the endpoint.
     if (-not (Test-Path -Path $f)) {
         Write-ErrorLog "Specified file or folder not found. Please check the path."
         Write-JobLog "ERROR: Specified file or folder not found. Stopping..."
@@ -232,7 +230,7 @@ try {
     Write-JobLog "INFO: Total files: $fileCount"
     Write-JobLog " "
 
-    # Archive the target (-f) into a password protected zip file. 
+    # Archive the target into a password protected zip file. 
     $ZipExe = Join-Path $stagingPath "7z.exe"
     $compressedZipName = "${timestamp}_output.zip"
     $compressedZip = Join-Path $outputPath $compressedZipName
@@ -258,9 +256,7 @@ try {
     # Tail off the job log.
     Write-JobLog "INFO: Job completed successfully. Packaging output and job log for collection."
 
-
     # Create final output archive of both the target file(s) and the job log for easy collection using getfile
-    # Determine final ZIP name without overwriting existing files
     $baseName = $computerName
     $counter = 0
 
@@ -281,7 +277,7 @@ try {
         Write-JobLog "WARNING: Final package could not be created. Individual files remain."
     }
 }
-## UNSPECIFIED ERROR HANDLING
+
 catch {
     Write-ErrorLog "Unexpected error: $($_.Exception.Message)"
     Write-JobLog "ERROR: Unexpected error: $($_.Exception.Message). Stopping..."
@@ -289,6 +285,6 @@ catch {
     exit 1
 }
 
-# Sleep for 1 second to prevent any cutoff of execution.
+# Prevent unintended cutoff of execution.
 Start-Sleep -Seconds 1
 exit 0
