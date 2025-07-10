@@ -16,7 +16,7 @@
 
 ##PARAMETERS
 param(
-    [Alias('t', 'Target')]
+    [Alias('o', 'Target')]
     [string]$TargetPath = 'C:\temp\'
 )
 
